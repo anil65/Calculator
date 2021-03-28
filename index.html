@@ -2,30 +2,39 @@
 <html>
 <head>
 	<title>CALCULATOR</title>
-	 <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 	<style type="text/css">
+		body
+		{
+			width: 100%;
+			height:auto;
+		}
 		.container
 		{
-			width:30%;
-			height:400px;
+			max-width:50%;
+			min-height:400px;
 			margin:20px 0px 0px 200px;
+			padding-left:60px;
 			border:1px solid gray;
 			background-color:gray;
+			position:relative;
+			box-sizing:border-box;
 		}
 		input[type="text"]
 		{
-			width:95%;
-			margin:3px 0px 0px 10px;
+			min-width:75%;
+			max-width:90%;
+			margin:3px 0px 0px 5px;
 			height:50px;
 			position:relative;
 			box-shadow:1px 1px 1px gray;
 		}
 		.btn
 		{
-
-			width:80px;
+			min-width:15%;
+			max-width:20%;
 			height:50px;
-			margin:5px 0px 0px 10px;
+			padding-left:1px;
+			margin:5px 0px 0px 18px;
 			position:relative;
 			box-shadow:2px 2px 2px gray;
 		}
@@ -103,7 +112,7 @@
 		<br>
 		<br>
 		<button type="button" class="btn" onclick="clr()">CLEAR</button>
-		<button type="button" class="btn" onclick="backspace()">BACKSPAC</button>
+		<button type="button" class="btn" onclick="backspace()">BACK</button>
 		<button type="button" class="btn" onclick="sci()">SCI</button>
 		<button type="button" class="btn" onclick="dis('^')">^</button>
 
