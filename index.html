@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<style type="text/css">
+		.container
+		{
+			width:30%;
+			height:400px;
+			margin:20px 0px 0px 200px;
+			border:1px solid gray;
+			background-color:gray;
+		}
+		input[type="text"]
+		{
+			width:95%;
+			margin:3px 0px 0px 10px;
+			height:50px;
+			position:relative;
+			box-shadow:1px 1px 1px gray;
+		}
+		.btn
+		{
+
+			width:80px;
+			height:50px;
+			margin:5px 0px 0px 10px;
+			position:relative;
+			box-shadow:2px 2px 2px gray;
+		}
+	</style>
+	<script type="text/javascript">
+		function dis(val)
+		{
+          document.getElementById('input').value += val;
+		}
+		function clr()
+		{
+			document.getElementById('input').value = "";
+		}
+		function backspace()
+		{
+			var x = document.getElementById('input').value;
+			var len = x.length;
+			len--;
+			var str="";
+			for(var i=0;i<len;i++)
+			{
+              str = str + x.charAt(i);
+			}
+			document.getElementById('input').value = str;
+		}
+		function result()
+		{
+			var x = document.getElementById('input').value;
+			var index = x.indexOf('^');
+			if(index == -1)
+			{
+			var y = eval(x);
+			document.getElementById('input').value = y;
+		    }
+		    else
+		    {
+		    var len = x.length;
+			var flag = false;
+			var a="",b="";
+			for(var i=0;i<len;i++)
+			{  
+				
+                if(!flag && x.charAt(i) != '^')
+                {
+                 a = a + x.charAt(i);   
+                }
+                if(x.charAt(i) == '^')
+                {
+                	flag = true;
+                	continue;
+                }
+                if(flag)
+                {
+                  b = b + x.charAt(i);
+                }
+			}
+			var num1,num2,result;
+			num1 = Number(a);
+			num2 = Number(b);
+			result = Math.pow(a,b);
+			document.getElementById('input').value = result;
+		   }
+		}
+		function sci()
+		{
+			window.open("SCIENTIFIC.html",'_parent');
+			
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		
+		<input type="text" name="name" class="bt" id="input">
+		<br>
+		<br>
+		<button type="button" class="btn" onclick="clr()">CLEAR</button>
+		<button type="button" class="btn" onclick="backspace()">BACKSPAC</button>
+		<button type="button" class="btn" onclick="sci()">SCI</button>
+		<button type="button" class="btn" onclick="dis('^')">^</button>
+
+		<br>
+		<br>
+		<button type="button" class="btn" onclick="dis('1')">1</button>
+		<button type="button" class="btn" onclick="dis('2')">2</button>
+		<button type="button" class="btn" onclick="dis('3')">3</button>
+		<button type="button" class="btn" onclick="dis('+')">+</button>
+		<br>
+		<button type="button" class="btn" onclick="dis('4')">4</button>
+		<button type="button" class="btn" onclick="dis('5')">5</button>
+		<button type="button" class="btn" onclick="dis('6')">6</button>
+		<button type="button" class="btn" onclick="dis('-')">-</button>
+		<br>
+		<button type="button" class="btn" onclick="dis('7')">7</button>
+		<button type="button" class="btn" onclick="dis('8')">8</button>
+		<button type="button" class="btn" onclick="dis('9')">9</button>
+		<button type="button" class="btn" onclick="dis('*')">*</button>
+        <br>
+        <button type="button" class="btn" onclick="dis('/')">/</button>
+		<button type="button" class="btn" onclick="dis('%')">%</button>
+		<button type="button" class="btn" onclick="dis('0')">0</button>
+		<button type="button" class="btn" onclick="result()">=</button>
+	</div>
+     
+</body>
+</html>

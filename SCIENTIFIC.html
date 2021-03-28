@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CALCULATOR</title>
+	<style type="text/css">
+		.container
+		{
+			width:30%;
+			height:400px;
+			margin:20px 0px 0px 200px;
+			border:1px solid gray;
+			background-color:gray;
+			box-shadow:1px 1px 1px gray;
+		}
+		input[type="text"]
+		{
+			width:95%;
+			margin:3px 0px 0px 10px;
+			height:50px;
+			position:relative;
+			box-shadow:1px 1px 1px gray;
+            
+		}
+		.btn
+		{
+
+			width:80px;
+			height:50px;
+			margin:5px 0px 0px 10px;
+			position:relative;
+			box-shadow:2px 2px 2px gray;
+
+		}
+	</style>
+	<script type="text/javascript">
+		function dis(val)
+		{
+			document.getElementById('input').value += val;
+		}
+		function clr()
+		{
+			document.getElementById('input').value = "";
+		}
+		function sqrt()
+		{
+		  var x = Number(document.getElementById('input').value);
+          document.getElementById('input').value = Math.sqrt(x);
+		}
+		function log()
+		{
+			//log base 10
+			var x = Number(document.getElementById('input').value);
+			document.getElementById('input').value = Math.log(x);
+		}
+		
+		function log2()
+		{
+			//log base 2
+			var x = Number(document.getElementById('input').value);
+			document.getElementById('input').value = Math.log2(x);
+		}
+     
+        function ex()
+		{
+			//log base 2
+			var x = Number(document.getElementById('input').value);
+			document.getElementById('input').value = Math.exp(x);
+		}
+		function abs()
+		{
+			//log base 2
+			var x = Number(document.getElementById('input').value);
+			document.getElementById('input').value = Math.abs(x);
+		}
+
+		
+		function backspace()
+		{
+			var x = document.getElementById('input').value;
+			var len = x.length;
+			len--;
+			var str="";
+			for(var i=0;i<len;i++)
+			{
+              str = str + x.charAt(i);
+			}
+			document.getElementById('input').value = str;
+		}
+		function result()
+		{
+			var x = document.getElementById('input').value;
+			var y = eval(x);
+			document.getElementById('input').value = y;
+		}
+		function Normal()
+		{
+			window.open("index.html",'_parent');
+			
+		}
+		function Developer()
+		{
+			window.alert("All content of this program is developed by Er. Anil kumar sonkar (sonkar.anil@tcs.com) for any query you contact the administrator on 8787059790 mobile number.if your want to the administrator you can visit on the personal portal on the https://anil65.github.io/ , whatsapp number is 8787059790 and can also follow on the linkedin and facebook to me.");
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		
+		<input type="text" name="name" class="bt" id="input">
+		<br>
+		<br>
+		<button type="button" class="btn" onclick="clr()">CLEAR</button>
+		<button type="button" class="btn" onclick="backspace()">BACKSPAC</button>
+		<button type="button" class="btn" onclick="Normal()">NORMAL</button>
+		<button type="button" class="btn" onclick="Developer()">D</button>
+		<br>
+		<br>
+		<button type="button" class="btn" onclick="dis('1')">1</button>
+		<button type="button" class="btn" onclick="dis('2')">2</button>
+		<button type="button" class="btn" onclick="dis('3')">3</button>
+		<button type="button" class="btn" onclick="sqrt()">Sqrt</button>
+		<br>
+		<button type="button" class="btn" onclick="dis('4')">4</button>
+		<button type="button" class="btn" onclick="dis('5')">5</button>
+		<button type="button" class="btn" onclick="dis('6')">6</button>
+		<button type="button" class="btn" onclick="log()">log10</button>
+		<br>
+		<button type="button" class="btn" onclick="dis('7')">7</button>
+		<button type="button" class="btn" onclick="dis('8')">8</button>
+		<button type="button" class="btn" onclick="dis('9')">9</button>
+		<button type="button" class="btn" onclick="log2()">log2</button>
+        <br>
+        <button type="button" class="btn" onclick="ex()">ex</button>
+		<button type="button" class="btn" onclick="abs()">abs</button>
+		<button type="button" class="btn" onclick="dis('0')">0</button>
+		<button type="button" class="btn" onclick="result()">=</button>
+	</div>
+     
+</body>
+</html>
